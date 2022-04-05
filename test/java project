@@ -1,0 +1,117 @@
+## 2022.04.05
+
+> 자판기 프로그램
+```
+	
+		// 동전입력 처리
+		// 입력한 동전을 저장할 변수
+		//
+		int coin=0;
+		String coin_="";
+		String menu= "";
+		
+		Scanner kbd = new Scanner(System.in);
+		
+		System.out.println("밀크커피(300), 프림커피(200), 블랙커피(200)"); 
+		System.out.print("동전입력 : ");
+		
+		coin_ = kbd.nextLine();
+		coin = Integer.parseInt(coin_);
+		
+		System.out.println("입력된 동전은 : "+coin);
+		
+//		if(coin < 200) {
+//			System.out.println("돈이 모자랍니다.");
+//			System.out.println("밀크커피(300), 프림커피(200), 블랙커피(200)"); 
+//			System.out.print("동전입력 : ");
+			
+//			coin_ = kbd.nextLine();
+//			coin = Integer.parseInt(coin_);
+//		}		
+//		System.out.println("입력된 동전은 : "+coin);
+
+		if(coin >= 300) {
+			System.out.println("선택 가능한 메뉴 : ");
+			System.out.println("1: 밀크커피(300), 2: 프림커피(200), 3: 블랙커피(200)");
+		} else if(coin >= 200) {
+			System.out.println("선택 가능한 메뉴 : ");
+			System.out.println("1: 프림커피(200), 3: 블랙커피(200)");
+		} else {
+			System.out.println("선택 가능한 메뉴가 없습니다.");
+		}
+			
+		// 커피 선책 처리 
+		menu = kbd.nextLine();
+		switch (menu) {
+		case "1":
+//			coin = coin -300;
+			coin -=300;
+			System.out.println("밀크커피가 나옵니다.");
+			break;
+		case "2":
+			coin -= 200;
+			System.out.println("프림커피가 나옵니다.");
+			break;
+		case "3":
+			coin -= 200;
+			System.out.println("블랙커피가 나옵니다.");
+			break;
+			
+		default:
+			System.out.println("메뉴를 잘못 입력하셨습니다. 다시 입력해 주세요.");
+			break;
+			
+			
+		}
+		System.out.println("남은 동전을 반환합니다.: "+coin);
+		
+		
+	}
+	
+
+}
+
+```
+
+> 가위바위보 게임
+```
+//		String computer_ = " ";
+		String user_ = " ";  //문자열로 받음.
+		int com, user;
+		final double PI = 3.14;
+		final String GAWI = "가위"; // 
+		final String BAWI = "바위";
+		final String BO = "보";
+		
+		System.out.println("짜란-");
+		System.out.println("켐퓨터와 가위바위보 게임을 시작합니다~.");
+		
+		
+		System.out.println("가위(1), 바위(2), 보(3) 중 숫자를 입력하세요. : ");
+		Scanner kbd = new Scanner(System.in);
+		user_ = kbd.nextLine();
+		user = Integer.parseInt(user_);
+		
+		com = (int)(Math.random()*3)+1; // 최소 값을 1로, 실수를 정수로.
+		System.out.println("당신 : "+user);
+		System.out.println("컴퓨터 : "+com);
+		
+	
+		switch (com-user) {
+			case 1:
+			case -2:
+				System.out.println("컴퓨터가 이겼습니다.");
+				break;
+				
+			case -1:
+			case 2:
+				System.out.println("컴퓨터가 졌습니다.");
+				break;
+			
+		}
+			
+	}
+
+}
+```
+***
